@@ -81,7 +81,7 @@ def prep_titanic_data(df):
 
 #----------------------------------TELCO----------------------------------------------
 def prep_telco_data(df):
-    df.drop(columns=['payment_type_id', 'internet_service_type_id', 'contract_type_id', 'customer_id'], inplace=True)
+    df.drop(columns=['payment_type_id', 'internet_service_type_id', 'contract_type_id'], inplace=True)
        
     df['total_charges'] = df['total_charges'].str.strip()
     df = df[df.total_charges != '']
