@@ -122,6 +122,9 @@ Further feature explore to see if accuracy can be improved.
 
 
 ### Wrangle steps: 
+- dropped unwanted columns.
+- created dummies for certain features
+- replaced strings with numeric values that needed to be converted
 
 
 *********************
@@ -135,6 +138,7 @@ Further feature explore to see if accuracy can be improved.
 
 
 ### Takeaways from exploration:
+- Four features were chosen for statistical testing: Tenure, Total Charges, Monthly Charges, and Gender.
 
 
 ***
