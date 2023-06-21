@@ -206,7 +206,6 @@ Tenure, Total Charges, and Monthly Charges hold a p-value less than 0.05. Gender
 ## <a name="model"></a>Modeling:
 [[Back to top](#top)]
 
-### Model Preparation:
 
 ### Baseline
     
