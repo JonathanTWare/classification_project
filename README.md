@@ -259,7 +259,7 @@ Tenure, Total Charges, and Monthly Charges hold a p-value less than 0.05. Gender
 
 
 
-##### Random Forrest preformed best
+##### KNN preformed best
 
 
 ## Testing the Model
