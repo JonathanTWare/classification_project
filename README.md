@@ -150,22 +150,27 @@ By using the chi-square test, we aim to determine whether there is a significant
 
 To perform the chi-square test in Python, we can use the chi2_contingency function from the scipy.stats module. This function takes the individual clusters as input and returns the chi-square statistic (chi2) and the p-value (p). The chi-square statistic represents the ratio of two variances, while the p-value indicates the probability of obtaining test results as extreme as the observed results, assuming the null hypothesis is true.
 
+### Stats Test 2: Independent T-Test
+The independent t-test is a statistical method used to examine the association between a categorical variable and a continuous variable.
+
+By using the independent t-test, we aim to determine whether there is a significant association between the both one categorical variable and a continuous variable. 
+
 ### Hypothesis
 
 In summary, the hypotheses for the chi-square test can be stated as follows:
 
-Null Hypothesis (H0): Tenure is independent of churn.
-Alternative Hypothesis (H1): Tenure is dependent of churn.
+Null Hypothesis (H0): Tenure does not have an association with churn.
+Alternative Hypothesis (H1): Tenure associated with churn.
 
 ### 2nd Hypothesis
 
-Null Hypothesis (H0): Monthly charges is independent of churn.
-Alternative Hypothesis (H1): Monthly charges is dependent of churn.
+Null Hypothesis (H0): Monthly charges is not associated with churn.
+Alternative Hypothesis (H1): Monthly charges is associated with churn.
 
 ### 3rd Hypothesis
 
-Null Hypothesis (H0): Total charges is independent of churn.
-Alternative Hypothesis (H1): Total charges is dependent of churn.
+Null Hypothesis (H0): Total charges is not associated with churn.
+Alternative Hypothesis (H1): Total charges is associated with churn.
 
 ### 4th Hypothesis
 
@@ -180,14 +185,14 @@ Alternative Hypothesis (H1): Sex is dependent of churn.
 
 | Feature | P - Value | Less than Alpha|
 | ---- | ---- | ---- |
-| Tenure | 6.794556914124504e-90 | True |
-| Monthly Charges | 1.7696616579595114e-06| True |
-| Total Charges | 0.605256775425442 | False |
+| Tenure | 4.577513863553669e-115 | True |
+| Monthly Charges | 1.0736272928972876e-35| True |
+| Total Charges | 1.2955473562990627e-34 | True |
 | Sex | 1.0 | False |
 
 
 #### Summary: 
-Both Tenure and Monthly Charges hold a p-value less than 0.05. Total Charges and Sex have a p-value greater than alpha. We will be using both Tenure and Monthly charges for our modeling.
+Tenure, Total Charges, and Monthly Charges hold a p-value less than 0.05. Gender has a p-value greater than alpha. We will be using Tenure, Total Charges, and Monthly Charges for our modeling.
 
 
 
@@ -202,12 +207,12 @@ Both Tenure and Monthly Charges hold a p-value less than 0.05. Total Charges and
 ### Baseline
     
 - Baseline Results: 
-    | Model | Train Score |
+| Model | Train Score |
 | ---- | ----|
-| Baseline | 0.73 | |
+| Baseline | 0.73 | 
 
 - Selected features to input into models:
-    - features = Tenure, and Monthly Charges
+    - features = Tenure, Total Charges and Monthly Charges
 
 ***
 
@@ -218,7 +223,7 @@ Both Tenure and Monthly Charges hold a p-value less than 0.05. Total Charges and
 
 
 
-##### KNN model had a train accuracy of 81% which was 8% over baseline, a validation score of 76%
+##### KNN model had a train accuracy of 82% which was 9% over baseline, a validation score of 78%
 
 
 
@@ -227,14 +232,14 @@ Both Tenure and Monthly Charges hold a p-value less than 0.05. Total Charges and
 
 
  
-##### RandomForest model had a train accuracy of 79% which was 6% over baseline, a validation score of 78%
+##### RandomForest model had a train accuracy of 81% which was 8% over baseline, a validation score of 78%
 
 
 
 ### Model 3 : Logistic Regression 
 
 
-##### Logistic Regression model had a train accuracy of 78% which was 5% over baseline, a validation score of 77%
+##### Logistic Regression model had a train accuracy of 79% which was 6% over baseline, a validation score of 78%
 
 
 ## Selecting the Best Model:
@@ -244,9 +249,9 @@ Both Tenure and Monthly Charges hold a p-value less than 0.05. Total Charges and
 | Model | Train Score | Validation Score |
 | ---- | ----| ---- |
 | Baseline | 0.73 | |
-| KNN| 0.81 | 0.76 |  
-| Random Forest| 0.79 | 0.78|  
-| Logistic Regression | 0.78 | 0.77 |  
+| KNN| 0.82 | 0.78 |  
+| Random Forest| 0.81 | 0.78|  
+| Logistic Regression | 0.79 | 0.78 |  
 
 
 
@@ -259,7 +264,7 @@ Both Tenure and Monthly Charges hold a p-value less than 0.05. Total Charges and
 
 | Model | Max Depth | Train Score | Validation Score | Test Score |
 | ---- | ----| ---- | ---- | ---- |
-| Random Forest| 3 | 0.79 | 0.78| 0.78 |  
+| KNN| 9 | 0.82 | 0.78| 0.78 |  
 
 
 
@@ -267,13 +272,13 @@ Both Tenure and Monthly Charges hold a p-value less than 0.05. Total Charges and
 
 ## <a name="conclusion"></a>Conclusion:
 
-#### Based on the information provided, it seems that the KNN model has the highest train accuracy of 81%, which is 8% over the baseline. However, the validation score of 76% suggests that the model may not generalize well to unseen data.
+#### Based on the information provided, it seems that the KNN model has the highest train accuracy of 82%, which is 9% over the baseline. 
 #### 
-#### On the other hand, the RandomForest model has a slightly lower train accuracy of 79%, which is 6% over the baseline. However, it has a higher validation score of 78%, indicating better generalization performance.
+#### On the other hand, the RandomForest model has a slightly lower train accuracy of 81%, which is 8% over the baseline. 
 #### 
-#### The Logistic Regression model has a train accuracy of 78%, which is 5% over the baseline, and a validation score of 77%. It falls between the KNN and RandomForest models in terms of performance.
+#### The Logistic Regression model has a train accuracy of 79%, which is 6% over the baseline.
 #### 
-#### Considering both the train accuracy and validation score, the RandomForest model appears to be the best choice as it shows relatively good performance on both the training and validation sets. 
+#### Considering all models have the same validation score, KNN was chosen due to the models slight training accuracy advantage.
 ####
-#### After running the RF model, a test score of 0.78 was given
+#### After running the KNN model, a test score of 0.78 was given
 [[Back to top](#top)]
