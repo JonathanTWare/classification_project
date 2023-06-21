@@ -157,7 +157,7 @@ By using the independent t-test, we aim to determine whether there is a signific
 
 ### Hypothesis
 
-In summary, the hypotheses for the chi-square test can be stated as follows:
+In summary, the hypotheses for the independent t-test and chi2 test can be stated as follows:
 
 Null Hypothesis (H0): Tenure does not have an association with churn.
 Alternative Hypothesis (H1): Tenure associated with churn.
@@ -207,8 +207,9 @@ Tenure, Total Charges, and Monthly Charges hold a p-value less than 0.05. Gender
 ### Baseline
     
 - Baseline Results: 
-| Model | Train Score |
-| ---- | ---- |
+
+| Model | Train Score | 
+| ---- | ---- | 
 | Baseline | 0.73 | 
 
 - Selected features to input into models:
