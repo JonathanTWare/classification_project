@@ -56,16 +56,6 @@ def split_telco_data(df):
                                        random_state=123, 
                                        stratify=train_validate.churn)
     
-    print(f'Train:{train.shape}')
-    print(f'Test:{test.shape}')
-    print(f'Val: {validate.shape}')
-
-    print("Train Telco Data:")
-    print(train.shape)
-    print(train)
-    print("Test Telco Data:")
-    print(test)
-    print("Validation Telco Data:")
-    print(validate)
+   
 
     return train, validate, test
