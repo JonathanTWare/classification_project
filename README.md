@@ -188,7 +188,7 @@ Alternative Hypothesis (H1): Sex is dependent of churn.
 | Tenure | 4.577513863553669e-115 | True |
 | Monthly Charges | 1.0736272928972876e-35| True |
 | Total Charges | 1.2955473562990627e-34 | True |
-| Sex | 1.0 | False |
+| Gender | 1.0 | False |
 
 
 #### Summary: 
@@ -208,7 +208,7 @@ Tenure, Total Charges, and Monthly Charges hold a p-value less than 0.05. Gender
     
 - Baseline Results: 
 | Model | Train Score |
-| ---- | ----|
+| ---- | ---- |
 | Baseline | 0.73 | 
 
 - Selected features to input into models:
